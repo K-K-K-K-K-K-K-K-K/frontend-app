@@ -18,5 +18,10 @@ jobs:
                 cache: 'npm'
           - name: install dependencies
             run: npm ci # Clean Install
-          - name: Build Project
+          - name: Build Project(Production dist folder)
             run: npm run build
+          - name: Upload folder artifact
+            uses: action/upload-artifact@v6
+            with:
+                name: 'dist-production'
+                path: 'dist'
