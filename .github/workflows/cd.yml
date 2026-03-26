@@ -3,7 +3,7 @@ name: Deploy to Github Page
 on:
     push:
         tags:
-            - '.[0-9]+.[0-9]+.[0-9]+'
+            - '[0-9]+.[0-9]+.[0-9]+'
             #- '*.*.*'
 jobs:
     build-prod-job:
