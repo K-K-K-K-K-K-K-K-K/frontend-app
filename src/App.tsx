@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <section id="center">
-        <dic className="hero">
+        <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
@@ -26,7 +26,7 @@ function App() {
         </div>
         <button
           className="counter"
-          onClick={() ==> setCount((count) => count + 1)}
+          onClick={() => setCount((count) => count + 1)}
         >
           Count is {count}
         </button>
@@ -76,7 +76,7 @@ function App() {
               </a>
             </li>
             <li>
-              <a href="https://chat.vite.dev/" target="_blank">
+              <a href=="https://chat.vite.dev/" target="_blank">
                 <svg
                   className="button-icon"
                   role="presentation"
