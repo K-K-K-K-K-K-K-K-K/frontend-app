@@ -9,7 +9,12 @@ on:
             - main # don't forget to remove if use normal flow
 
 jobs:
-  job-1:
+  lint-job:
     runs-on: ubuntu-latest
     steps:
-        - run: echo "Hello World"
+        - uses: actions/checkout@v6
+        - uses: actions/setup-node@v6
+          with: 
+            node-version: '24.x'
+            cache: 'npm'
+        - run: node -v
