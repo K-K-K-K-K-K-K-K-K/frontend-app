@@ -17,4 +17,5 @@ jobs:
           with: 
             node-version: '24.x'
             cache: 'npm'
-        - run: node -v
+        - run: npm ci # Clean Install
+        - run: npm run lint
