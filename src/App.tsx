@@ -20,6 +20,9 @@ function App() {
           <p>
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
+          <p>
+            Why are we still here?
+          </p>
         </div>
         <button
           className="counter"
