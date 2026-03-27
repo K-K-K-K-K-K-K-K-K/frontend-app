@@ -21,7 +21,7 @@ jobs:
           - name: Build Project(Production dist folder)
             run: npm run build
           - name: Upload folder artifact
-            uses: actions/upload-artifact@v8
+            uses: actions/upload-artifact@v6
             with:
                 name: 'dist-production'
                 path: 'dist'
