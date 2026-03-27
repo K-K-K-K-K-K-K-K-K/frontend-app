@@ -1,0 +1,22 @@
+name: Deploy to Docker
+
+on:
+    push:
+        tags:
+            - '[0-9]+.[0-9]+.[0-9]+'
+            #- '*.*.*'
+jobs:
+    build-image-and-push-job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Clone Repo
+            uses: actions/checkout@v6
+          - name: Build & push Docker image to Github Registry
+            uses: mr-smithers-excellent/docker-build-push@v6
+            with: 
+                image: ${{github.event.repository.name}}
+                # tags: v1, latest # Use GitOps autotaging
+                registry: ghcr.io
+                dockerfile: Dockerfile
+                username: ${{ github.actor }} # Github Username
+                password: ${{secrets.GITHUB_TOKEN}}
