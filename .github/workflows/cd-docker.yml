@@ -27,7 +27,7 @@ jobs:
       env:
         CONTAINER_NAME: ${{github.actor}}
         SERVER_PORT: 3948
-        DOCKER_IMAGE_URL: docker pull ghcr.io/k-k-k-k-k-k-k-k-k/${{github.event.repository.name}}:${{github.ref_name}}
+        DOCKER_IMAGE_URL: 'ghcr.io/k-k-k-k-k-k-k-k-k/${{github.event.repository.name}}:${{github.ref_name}}'
       steps:
         - name: Execute remote SSH commands using password
           uses: appleboy/ssh-action@v1.2.5
