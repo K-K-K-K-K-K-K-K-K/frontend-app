@@ -21,7 +21,26 @@ jobs:
           - name: Build Project(Production dist folder)
             run: npm run build
           - name: Upload folder artifact
-            uses: actions/upload-artifact@v7
+            uses: actions/upload-artifact@v8
             with:
                 name: 'dist-production'
                 path: 'dist'
+    auto-deploy-github-page:
+        runs-on: ubuntu-latest
+        needs: build-prod-job
+        permissions:
+            contents: write
+        steps:
+        - name: Download this folder's artifact
+          uses: actions/download-artifact@v8
+          with:
+            name: dist-production
+            path: dist
+        - run: ls dist
+        - uses: actions/checkout@v6
+        - name: Deploy to Github Page
+          uses: SerhiiKa/VuePagesAction@1.0.4
+          with:
+            username: ${{github.actor}}
+            reponame: ${{github.event.repository.name}}
+            token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged 

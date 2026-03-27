@@ -21,7 +21,7 @@ function App() {
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
           <p>
-            Why are we still here?
+            Why are we still here? V2.0.0
           </p>
         </div>
         <button
